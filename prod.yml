@@ -5,8 +5,18 @@ services:
       file: common.yml
       service: dockerapp
     image: valkrysa/dockerapp
+    depends_on:
+      - redis
+    networks:
+      - mynet
 
   redis:
     extends:
       file: common.yml
-      service: redisß
+      service: redis
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: overlay
