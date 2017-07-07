@@ -4,9 +4,9 @@ services:
     extends:
       file: common.yml
       service: dockerapp
-    build: .
+    image: valkrysa/dockerapp
 
   redis:
     extends:
       file: common.yml
-      service: redis
+      service: redisß
